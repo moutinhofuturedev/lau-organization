@@ -1,3 +1,6 @@
 export default function Home() {
-  return <h1>Lau Organização</h1>
+  return (
+    <div className="h-full bg-[url('back.jpeg')] bg-cover">
+    </div>
+  )
 }
