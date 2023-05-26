@@ -22,7 +22,7 @@ export default function Home() {
           <LinkCard key={link.title} {...link} />
         ))}
 
-        <div className="flex items-center gap-8 mt-6">
+        <div className="flex items-center gap-8 mt-6 relative">
           {data.social.map((social) => {
             if (social.title.includes("Instagram")) {
               return (
