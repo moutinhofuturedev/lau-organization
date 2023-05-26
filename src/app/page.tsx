@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="h-full bg-[url('back.png')] bg-no-repeat bg-cover">
       <div className="flex items-center justify-center flex-col mx-auto w-full">
-        <Image className="rounded-md mt-16" src="logo.svg" alt={data.name} title={data.name} width="100" height="100" priority={true}/>
+        <Image className="mt-16" src="/lau-organização.png" alt={data.name} title={data.name} width="100" height="100" priority={true}/>
 
         <div className="flex justify-center flex-col items-center">
           <h1 className={`text-xl font-sans mt-4 tracking-widest ${nobile.className}`}>{data.name.toUpperCase()}</h1>
@@ -45,6 +45,9 @@ export default function Home() {
             }
           })}
         </div>
+        <footer className="mx-auto -my-10">
+          <p className="text-colorPalette mt-32 text-xs">Copyright © Lau Organização 2023.Suzano, SP.</p>
+        </footer>
       </div>
     </div>
   )
