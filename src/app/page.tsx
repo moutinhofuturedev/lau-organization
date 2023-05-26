@@ -4,13 +4,14 @@ import data from "../../data.json";
 import { LinkCard } from "@/components/LinkCard";
 import { InstagramIcon, WhatsAppIcon } from "@/components/SocialIcons";
 import { Nobile } from 'next/font/google'
+import { Footer } from "@/components/Footer";
 
 const nobile = Nobile({ subsets: ['latin'], weight: '400' })
 
 export default function Home() {
   return (
-    <div className="h-full bg-[url('back.png')] bg-no-repeat bg-cover">
-      <div className="flex items-center justify-center flex-col mx-auto w-full">
+    <div className="h-screen bg-[url('back.png')] bg-no-repeat bg-cover">
+      <div className="flex items-center justify-center flex-col mx-auto h-full">
         <Image className="rounded-md mt-16" src="logo.svg" alt={data.name} title={data.name} width="100" height="100" priority={true}/>
 
         <div className="flex justify-center flex-col items-center">
@@ -45,6 +46,8 @@ export default function Home() {
             }
           })}
         </div>
+
+        <Footer />
       </div>
     </div>
   )
