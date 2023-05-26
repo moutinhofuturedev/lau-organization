@@ -6,5 +6,5 @@
 body {
     @apply h-screen w-screen text-white;
     -webkit-font-smoothing: antialiased;
-    /* text-rendering: optimizeLegibility; */
+    text-rendering: optimizeLegibility;
 }
