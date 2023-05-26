@@ -14,7 +14,7 @@ export default function Home() {
         <Image className="rounded-md mt-16" src="logo.svg" alt={data.name} title={data.name} width="100" height="100" priority={true}/>
 
         <div className="flex justify-center flex-col items-center">
-          <h1 className={`text-xl font-sans mt-4 tracking-widest ${nobile.className}`}>{data.name}</h1>
+          <h1 className={`text-xl font-sans mt-4 tracking-widest ${nobile.className}`}>{data.name.toUpperCase()}</h1>
           <p className="text-sm font-sans mb-8 leading-3 tracking-[.2em]">{data.jobTilte}</p>
         </div>
 
