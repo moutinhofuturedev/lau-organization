@@ -4,7 +4,7 @@
 
 
 body {
-    @apply h-screen w-screen text-white;
+    @apply bg-colorBody h-full w-screen text-white;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
