@@ -1,5 +1,3 @@
-import { MetadataRoute } from 'next';
-
 type Sitemap = Array<{
   url: string;
   lastModified?: string | Date;
