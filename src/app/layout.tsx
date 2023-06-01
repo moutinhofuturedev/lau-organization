@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   icons: {
     shortcut: "icon.png",
   },
+  verification: {
+    google: "4on3Ax2OR-BtXre94Wg3N7yZ0OoXYFPRCxle-bWVeAo"
+  }
 };
 
 
