@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Lau Organização',
     images: [
       {
-        url: 'http://lauorganization.vercel.app/lau-organização.png',
+        url: 'https://lauorganization.vercel.app/lau-organização.png',
         width: 800,
         height: 600,
       }
