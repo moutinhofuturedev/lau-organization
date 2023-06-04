@@ -1,15 +1,10 @@
-type Sitemap = Array<{
-  url: string;
-  lastModified?: string | Date;
-  image: string
-}>;
+import { MetadataRoute } from 'next';
  
-export default function sitemap(): Sitemap {
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://lauorganization.vercel.app/',
       lastModified: new Date(),
-      image: 'http://lauorganization.vercel.app/lau-organização.png'
     }
   ];
 }
