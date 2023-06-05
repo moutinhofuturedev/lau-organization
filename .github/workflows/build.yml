@@ -7,10 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  pipeline:
-    name: Continuous Integration Pipeline
-    runs-on: self-hosted
-    
+  
   sonarcloud:
       name: SonarCloud
       runs-on: ubuntu-latest
