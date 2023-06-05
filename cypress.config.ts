@@ -1,7 +1,8 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  projectId: 'uq2ros',
   e2e: {
-    baseUrl: "http://localhost:3000"
+    baseUrl: "https://lauorganization.vercel.app/"
   },
 });
