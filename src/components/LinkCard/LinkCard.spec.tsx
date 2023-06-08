@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom'
 import { LinkCard } from ".";
 import { LinkCardProps } from "@/types/type";
@@ -16,4 +16,4 @@ describe("Component LinkCard", () => {
 
     expect(titleLink).toBeInTheDocument();
   });
-});
+})
