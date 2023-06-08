@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint", 
+    "lint": "next lint",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:cloud": "npx cypress run --record --key 492228f6-7ff3-4baa-a3f1-f76ff05af9ef"
+    "cy:cloud": "npx cypress run --record --key 492228f6-7ff3-4baa-a3f1-f76ff05af9ef",
+    "test": "jest"
   },
   "dependencies": {
     "@types/node": "20.2.3",
@@ -26,6 +27,11 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "cypress": "^12.13.0"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.2",
+    "cypress": "^12.13.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
   }
 }
