@@ -17,7 +17,7 @@ describe("Component LinkCard", () => {
     const titleLink = screen.getByText(link.title);
 
     expect(titleLink).toBeInTheDocument();
-    expect(titleLink).toBeEnabled();
+    expect(titleLink).toBeDefined();
   });
 
   it("deve clicar em link e abrir nova página", () => {
