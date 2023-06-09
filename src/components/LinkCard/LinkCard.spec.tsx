@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event'
+import { act } from "react-dom/test-utils";
+import { expect } from '@jest/globals';
 import { LinkCard } from ".";
 import { LinkCardProps } from "@/types/type";
 
@@ -9,11 +11,24 @@ const link: LinkCardProps = {
 };
 
 describe("Component LinkCard", () => {
-  it("deve renderizar link", () => {
+  it("deve renderizar título do link", () => {
     render(<LinkCard {...link} />);
 
     const titleLink = screen.getByText(link.title);
 
     expect(titleLink).toBeInTheDocument();
+    expect(titleLink).toBeEnabled();
   });
+
+  it("deve clicar em link e abrir nova página", () => {
+    render(<LinkCard {...link} />);
+
+    const linkElement = screen.getByRole('link', { name: /Vamos conversar?/i });
+    act(() => {
+      userEvent.click(linkElement);
+    })
+
+    expect(linkElement).toHaveAttribute('target', '_blank');
+    expect(window.open).toMatchSnapshot();
+  })
 })
