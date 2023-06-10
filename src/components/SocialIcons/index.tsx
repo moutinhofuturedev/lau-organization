@@ -3,6 +3,7 @@ import React from "react";
 export function InstagramIcon() {
   return (
     <svg
+      data-cy="svg-instagram"
       xmlns="http://www.w3.org/2000/svg"
       width="48"
       height="48"
@@ -20,6 +21,7 @@ export function InstagramIcon() {
 export function WhatsAppIcon() {
   return (
     <svg
+      data-cy="svg-whatsapp"
       xmlns="http://www.w3.org/2000/svg"
       width="48"
       height="49"

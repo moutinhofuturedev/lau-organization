@@ -4,6 +4,7 @@ import { LinkCardProps } from "@/types/type";
 export function LinkCard({ url, title }: LinkCardProps) {
   return (
     <Link
+      data-cy="link"
       href={url}
       passHref
       target="_blank"
