@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from '@testing-library/user-event'
-import { act } from "react-dom/test-utils";
 import { expect } from '@jest/globals';
 import { LinkCard } from "..";
 import { LinkCardProps } from "@/types/type";
