@@ -12,6 +12,13 @@ jobs:
       name: SonarCloud
       runs-on: ubuntu-latest
       steps:
+        - name: Quality Gate
+          uses: ./.convair-actions/quality-gate
+          with:
+            sonarUrl: https://sonarcloud.io
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+            sonarLoginToken: ${{ secrets.SONAR_TOKEN }} 
+
         - uses: actions/checkout@v3
           with:
             fetch-depth: 0
@@ -21,10 +28,3 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-        - name: Quality Gate
-          uses: ./.convair-actions/quality-gate
-          with:
-            sonarUrl: https://sonarcloud.io
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-            sonarLoginToken: ${{ secrets.SONAR_TOKEN }} 
