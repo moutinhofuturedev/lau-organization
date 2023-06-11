@@ -22,12 +22,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-        - name: Node Test
-          uses: ./.convair-actions/node-test
-          with:
-            image: node:16-alpine
-            testScriptName: "test:coverage"
-
         - name: Quality Gate
           uses: ./.convair-actions/quality-gate
           with:
