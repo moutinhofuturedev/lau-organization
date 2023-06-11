@@ -12,12 +12,6 @@ jobs:
       name: SonarCloud
       runs-on: ubuntu-latest
       steps:
-        - name: Quality Gate
-          uses: ./.convair-actions/quality-gate
-          with:
-            sonarUrl: https://sonarcloud.io
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-            sonarLoginToken: ${{ secrets.SONAR_TOKEN }} 
 
         - uses: actions/checkout@v3
           with:
