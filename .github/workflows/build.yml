@@ -21,8 +21,7 @@ jobs:
       - name: Checkout Convair Actions
         uses: actions/checkout@v3
         with:
-          repository: moutinhofuturedev/convair-actions 
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: main
           
       - name: Node Test
         uses: ./.convair-actions/node-test
