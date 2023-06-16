@@ -1,4 +1,4 @@
-name: My Test Single Project
+name: Build
 on:
   push:
     branches:
@@ -6,16 +6,25 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
-  sonarcloud:
-    name: SonarCloud
+  pipeline:
+    name: Continuous Integration Pipeline
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0  
+          fetch-depth: 0
+
+      - name: Checkout Convair Actions
+        uses: actions/checkout@v3
+        with:
+          path: main
+        
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
