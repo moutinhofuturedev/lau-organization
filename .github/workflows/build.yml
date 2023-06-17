@@ -1,4 +1,4 @@
-name: Build
+name: Continuous Integration Pipeline
 on:
   push:
     branches:
@@ -8,23 +8,15 @@ on:
       - main
 
 jobs:
-  pipeline:
-    name: Continuous Integration Pipeline
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-
-      - name: Checkout Convair Actions
-        uses: actions/checkout@v3
-        with:
-          path: main
-        
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
