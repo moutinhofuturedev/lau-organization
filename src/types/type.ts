@@ -1,4 +1,4 @@
 export interface LinkCardProps {
-  url: string;
-  title: string;
+  url: string
+  title: string
 }

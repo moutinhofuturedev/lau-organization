@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { LinkCardProps } from "@/types/type";
+import Link from 'next/link'
+import { LinkCardProps } from '@/types/type'
 
 export function LinkCard({ url, title }: LinkCardProps) {
   return (
@@ -20,11 +20,13 @@ export function LinkCard({ url, title }: LinkCardProps) {
         border-none 
         mb-3 
         bg-colorPalette"
-        rel="noreferrer"
+      rel="noreferrer"
     >
-        <div className="flex justify-center items-center w-full">
-            <h2 className="font-semibold text-lg text-center sm:text-left leading-6">{title}</h2>
-        </div>
+      <div className="flex justify-center items-center w-full">
+        <h2 className="font-semibold text-lg text-center sm:text-left leading-6">
+          {title}
+        </h2>
+      </div>
     </Link>
-  );
+  )
 }

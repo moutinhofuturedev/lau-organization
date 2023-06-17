@@ -1,9 +1,9 @@
-import nextJest from 'next/jest.js';
- 
+import nextJest from 'next/jest.js'
+
 const createJestConfig = nextJest({
   dir: './',
-});
- 
+})
+
 // Add any custom config to be passed to Jest
 /** @type {import('jest').Config} */
 const config = {
@@ -12,9 +12,9 @@ const config = {
   testPathIgnorePatterns: ['/node_modules', '/.next/', '/cypress/'],
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts(x)', '!**/*.cy.tsx', '!**/layout.tsx'],
- 
+
   testEnvironment: 'jest-environment-jsdom',
-};
- 
+}
+
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-export default createJestConfig(config);
+export default createJestConfig(config)
