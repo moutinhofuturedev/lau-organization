@@ -1,14 +1,22 @@
 /* eslint-disable array-callback-return */
 import Link from 'next/link'
 import Image from 'next/image'
-import data from '../../data.json'
 import { LinkCard } from '@/components/LinkCard'
 import { InstagramIcon, WhatsAppIcon } from '@/components/SocialIcons'
 import { Nobile } from 'next/font/google'
+import { UnionProps } from '@/types/type'
+import { get } from '@vercel/edge-config'
+import { redirect } from 'next/navigation'
 
 const nobile = Nobile({ subsets: ['latin'], weight: '400' })
 
-export default function Home() {
+export default async function HomePage() {
+  const data: any = await get('lauorganization')
+
+  if (!data) {
+    redirect('https://www.instagram.com/lau_organizacao/')
+  }
+
   return (
     <div className="h-full bg-[url('back.png')] bg-no-repeat bg-cover">
       <div className="flex items-center justify-center flex-col mx-auto w-full">
@@ -29,16 +37,16 @@ export default function Home() {
             {data.name.toUpperCase()}
           </h1>
           <p className="text-sm font-sans mb-8 leading-3 tracking-[.2em]">
-            {data.jobTilte}
+            {data.jobTitle}
           </p>
         </div>
 
-        {data.links.map((link) => (
+        {data.links.map((link: UnionProps) => (
           <LinkCard key={link.title} {...link} />
         ))}
 
         <div className="flex items-center gap-8 mt-6 relative">
-          {data.social.map((social) => {
+          {data.social.map((social: UnionProps) => {
             if (social.title.includes('Instagram')) {
               return (
                 <Link
