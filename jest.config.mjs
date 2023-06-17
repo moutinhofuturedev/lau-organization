@@ -11,7 +11,12 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['/node_modules', '/.next/', '/cypress/'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.ts(x)', '!**/*.cy.tsx', '!**/layout.tsx'],
+  collectCoverageFrom: [
+    'src/**/*.ts(x)',
+    '!**/*.cy.tsx',
+    '!**/layout.tsx',
+    '!**/page.tsx',
+  ],
 
   testEnvironment: 'jest-environment-jsdom',
 }
