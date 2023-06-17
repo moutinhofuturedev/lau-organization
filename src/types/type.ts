@@ -3,14 +3,7 @@ export type LinkCardProps = {
   title: string
 }
 
-type UnionProps = {
+export type UnionProps = {
   title: string
   url: string
-}
-
-export type DataProps = {
-  name: string
-  jobTitle: string
-  links: UnionProps[]
-  social: UnionProps[]
 }
