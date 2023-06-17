@@ -4,5 +4,5 @@
     "node": true,
     "browser": true
   },
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "@rocketseat/eslint-config/react"]
 }
