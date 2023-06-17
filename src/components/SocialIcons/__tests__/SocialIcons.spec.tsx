@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { WhatsAppIcon } from '..'
+import { WhatsAppIcon, InstagramIcon } from '..'
 
 describe('WhatsAppIcon', () => {
   it('should render the WhatsAppIcon component', () => {
@@ -23,5 +23,13 @@ describe('WhatsAppIcon', () => {
     expect(svgElement).toHaveAttribute('height', '49')
     expect(svgElement).toHaveAttribute('fill', 'none')
     expect(svgElement).toHaveAttribute('viewBox', '0 0 48 49')
+  })
+
+  it('should render the InstagramIcon component', () => {
+    render(<InstagramIcon />)
+    const svgElement = screen.getByTestId('svg-instagram')
+
+    expect(svgElement).toBeInTheDocument()
+    expect(svgElement.tagName).toBe('svg')
   })
 })
