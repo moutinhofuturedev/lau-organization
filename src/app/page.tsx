@@ -4,13 +4,18 @@ import Image from 'next/image'
 import { LinkCard } from '@/components/LinkCard'
 import { InstagramIcon, WhatsAppIcon } from '@/components/SocialIcons'
 import { Nobile } from 'next/font/google'
-import { DataProps } from '@/types/type'
+import { UnionProps } from '@/types/type'
 import { get } from '@vercel/edge-config'
+import { redirect } from 'next/navigation'
 
 const nobile = Nobile({ subsets: ['latin'], weight: '400' })
 
 export default async function HomePage() {
-  const data: DataProps = await get('lauorganization')
+  const data: any = await get('lauorganization')
+
+  if (!data) {
+    redirect('https://www.instagram.com/lau_organizacao/')
+  }
 
   return (
     <div className="h-full bg-[url('back.png')] bg-no-repeat bg-cover">
@@ -36,12 +41,12 @@ export default async function HomePage() {
           </p>
         </div>
 
-        {data.links.map((link) => (
+        {data.links.map((link: UnionProps) => (
           <LinkCard key={link.title} {...link} />
         ))}
 
         <div className="flex items-center gap-8 mt-6 relative">
-          {data.social.map((social) => {
+          {data.social.map((social: UnionProps) => {
             if (social.title.includes('Instagram')) {
               return (
                 <Link
