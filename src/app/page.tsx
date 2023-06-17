@@ -1,14 +1,17 @@
 /* eslint-disable array-callback-return */
 import Link from 'next/link'
 import Image from 'next/image'
-import data from '../../data.json'
 import { LinkCard } from '@/components/LinkCard'
 import { InstagramIcon, WhatsAppIcon } from '@/components/SocialIcons'
 import { Nobile } from 'next/font/google'
+import { DataProps } from '@/types/type'
+import { get } from '@vercel/edge-config'
 
 const nobile = Nobile({ subsets: ['latin'], weight: '400' })
 
-export default function Home() {
+export default async function HomePage() {
+  const data: DataProps = await get('lauorganization')
+
   return (
     <div className="h-full bg-[url('back.png')] bg-no-repeat bg-cover">
       <div className="flex items-center justify-center flex-col mx-auto w-full">
@@ -29,7 +32,7 @@ export default function Home() {
             {data.name.toUpperCase()}
           </h1>
           <p className="text-sm font-sans mb-8 leading-3 tracking-[.2em]">
-            {data.jobTilte}
+            {data.jobTitle}
           </p>
         </div>
 
