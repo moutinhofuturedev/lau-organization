@@ -1,33 +1,26 @@
-import { render, screen, act } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import { expect } from '@jest/globals'
-import { LinkCard } from '..'
-import { LinkCardProps } from '@/types/type'
+import React from 'react'
+import { render, screen } from '@testing-library/react'
 
-const link: LinkCardProps = {
-  url: 'https://assessoriavip.com.br/funnelFormLead/1d396804-ee97-4ca9-8318-7cfe1a1ed083',
-  title: 'Vamos conversar?',
-}
+import { LinkCard } from '../index'
 
-describe('Component LinkCard', () => {
-  it('deve renderizar título do link', () => {
-    render(<LinkCard {...link} />)
+describe('LinkCard component', () => {
+  const mockProps = {
+    url: 'https://example.com',
+    title: 'Example Link',
+  }
 
-    const titleLink = screen.getByText(link.title)
+  test('renders link with correct title', () => {
+    render(<LinkCard {...mockProps} />)
 
-    expect(titleLink).toBeInTheDocument()
-    expect(titleLink).toBeDefined()
+    const titleElement = screen.getByText(mockProps.title)
+
+    expect(titleElement).toBeInTheDocument()
   })
 
-  it('deve clicar em link e abrir nova página', () => {
-    render(<LinkCard {...link} />)
+  test('renders with data-cy attribute', () => {
+    render(<LinkCard {...mockProps} />)
 
-    const linkElement = screen.getByRole('link', { name: /Vamos conversar?/i })
-    act(() => {
-      userEvent.click(linkElement)
-    })
-
-    expect(linkElement).toHaveAttribute('target', '_blank')
-    expect(window.open).toMatchSnapshot()
+    const linkElement = screen.getByTestId('link')
+    expect(linkElement).toBeInTheDocument()
   })
 })

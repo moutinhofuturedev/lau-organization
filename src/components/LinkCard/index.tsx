@@ -5,6 +5,7 @@ export function LinkCard({ url, title }: LinkCardProps) {
   return (
     <Link
       data-cy="link"
+      data-testid="link"
       href={url}
       passHref
       target="_blank"
