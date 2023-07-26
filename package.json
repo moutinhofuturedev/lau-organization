@@ -11,7 +11,7 @@
     "cy:run": "cypress run",
     "cy:cloud": "npx cypress run --record --key 492228f6-7ff3-4baa-a3f1-f76ff05af9ef",
     "test": "jest",
-    "test:ci": "jest --collectCoverage"
+    "test:coverage": "jest --runInBand --coverage"
   },
   "dependencies": {
     "@types/node": "20.2.3",
